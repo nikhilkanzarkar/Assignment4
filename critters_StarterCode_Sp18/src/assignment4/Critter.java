@@ -204,6 +204,9 @@ public abstract class Critter {
 		    Class loadClass = Class.forName(critter_class_name);
             Constructor makeCrit = loadClass.getConstructor();
             Critter newCrit = (Critter)makeCrit.newInstance();
+            newCrit.energy = start_energy;
+            newCrit.x_coord = getRandomInt(world_width);
+            newCrit.y_coord = getRandomInt(world_height);
             population.add(newCrit);
 
         }
@@ -475,6 +478,6 @@ public abstract class Critter {
         for(int i = 0; i<world_width;i++){
             System.out.print("-");
         }
-        System.out.print("+");
+        System.out.println("+");
 	}
 }
