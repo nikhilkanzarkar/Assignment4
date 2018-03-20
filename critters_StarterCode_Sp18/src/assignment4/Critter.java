@@ -16,6 +16,7 @@ package assignment4;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import java.util.ListIterator;
 
 import static assignment4.Params.*;
 
@@ -156,14 +157,33 @@ public abstract class Critter {
     }
 	
 	protected final void walk(int direction) {
+        energy = energy-walk_energy_cost;
 	    moveHelper(1,direction);
+
 	}
-	
+	private boolean getHasMoved()
+    {
+        return false;
+    }
 	protected final void run(int direction) {
         moveHelper(2,direction);
+        energy = energy-run_energy_cost;
 	}
 	
 	protected final void reproduce(Critter offspring, int direction) {
+	    //cannot reproduce
+        if(getEnergy() < min_reproduce_energy) {
+            return;
+        }
+        //divdes the energy by 2 as it is reproducing
+        offspring.energy = getEnergy()/2;
+
+        if(energy%2 != 0) {
+            energy = energy/2 + 1;
+        }
+        else energy = energy/2;
+        offspring.walk(direction);
+        babies.add(offspring);  //adds babies to the List of offspring
 	}
 
 	public abstract void doTimeStep();
@@ -215,21 +235,22 @@ public abstract class Critter {
 	 * @return List of Critters.
 	 * @throws InvalidCritterException
 	 */
-	public static List<Critter> getInstances(String critter_class_name) throws InvalidCritterException {
-		List<Critter> result = new java.util.ArrayList<Critter>();
-		try {
+    public static List<Critter> getInstances(String critter_class_name) throws InvalidCritterException {
+        List<Critter> result = new java.util.ArrayList<Critter>();
+        try {
+            Class loadClass = Class.forName(critter_class_name);
             for (int i = 0; i < population.size(); i++) {
-                if (population.get(i).getClass().equals(critter_class_name)) {
+                if (population.get(i).getClass() == loadClass ) {
                     result.add(population.get(i));
                 }
             }
             return result;
         }
-        catch (IndexOutOfBoundsException e)
+        catch(ClassNotFoundException e)
         {
             throw new InvalidCritterException(critter_class_name);
         }
-	}
+    }
 	
 	/**
 	 * Prints out how many Critters of each type there are on the board.
@@ -314,13 +335,42 @@ public abstract class Critter {
 	    population.clear();
 		babies.clear();
 	}
+	private static boolean alreadyOccupied(int x_coord, int y_coord)
+    {
+        int same = 0;
+        for(int i = 0;i<population.size();i++)
+        {
+            if(population.get(i).x_coord == x_coord && population.get(i).y_coord == y_coord)
+            {
+                same++;
+            }
+        }
+        if(same > 1)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
 	
 	public static void worldTimeStep() {
+	    int tempXCoord;
+	    int tempYCoord;
 		//makes each critter do a timestep
 	    for(int i = 0;i<population.size();i++)
         {
             population.get(i).doTimeStep();
         }
+        //deletes any critter that has moved but has no/negative energy now.
+        ListIterator<Critter> iter= population.listIterator();
+       while(iter.hasNext())
+       {
+           if(iter.next().energy < 0)
+           {
+               iter.remove();
+           }
+       }
+        //encounters checking
         for(int i =0;i<population.size();i++)
         {
             for(int j =i+1;j<population.size();j++)
@@ -347,27 +397,54 @@ public abstract class Critter {
                                 population.remove(i);
                             }
                         }
+                        else
+                        {
+
+                            tempXCoord = population.get(j).x_coord;
+                            tempYCoord = population.get(j).y_coord;
+                            population.get(j).run(getRandomInt(8));
+                            if(alreadyOccupied(population.get(j).x_coord,population.get(j).y_coord))
+                            {
+                                population.get(j).x_coord = tempXCoord;
+                                population.get(j).y_coord = tempYCoord;
+                            }
+                            if(population.get(j).energy <= 0)
+                            {
+                                population.remove(population.get(j));
+                            }
+                        }
+                    }
+                    if(population.get(j).fight(population.get(i).toString()))
+                    {
+                        if(population.get(i).getHasMoved())
+                        {
+                            population.get(j).energy += population.get(i).energy/2;
+                            population.remove(i);
+                        }
+                        else {
+                            population.get(i).run(getRandomInt(8));
+                        }
                     }
 
                 }
             }
         }
 
-        try {
-            for (int i = 0; i < refresh_algae_count; i++) {
-               makeCritter("assignment4.Algae");
-               population.get(population.size()-1).energy = start_energy;
-               population.get(population.size()-1).x_coord = getRandomInt(world_width);
-               population.get(population.size()-1).y_coord = getRandomInt(world_height);
+        for (int i = 0; i < refresh_algae_count; i++) {
+            TestCritter addAlg = new Algae();
+            addAlg.setEnergy(start_energy);
+            addAlg.setX_coord(getRandomInt(world_width));
+            addAlg.setY_coord(getRandomInt(world_height));
+            population.add(addAlg);
+        }
+
+        if(babies.size()!=0) {
+            for(int i = 0; i<babies.size();i++) {
+                population.add(babies.get(i));
+                babies.remove(i);
             }
         }
-        catch (InvalidCritterException e)
-        {
-            e.toString();
-        }
-
-
-	}
+    }
 
 	public static String checkOccupancy(int x, int y){
 	    for(int i = 0; i < population.size(); i++){
