@@ -55,6 +55,13 @@ public abstract class Critter {
 	private int x_coord;
 	private int y_coord;
 
+    /**
+     * A function that helps the walk and run functions by determining the new x and y coordinates depending on whether or not walk or run was specified.
+     * Accounts for wrapping of the grid - if the new coordinate goes out of bounds it will wrap to the other side.
+     * @param speed - walk or run
+     * @param direction
+     * @return nothing
+     */
 	private void moveHelper(int speed, int direction)
     {
         if(direction == 0)
@@ -155,21 +162,40 @@ public abstract class Critter {
             else y_coord = temp2;
         }
     }
-	
+    /**
+     * Determines the new energy/x and y coordinates when a critter signals it is trying to walk.
+     * @param direction
+     * @return nothing
+     */
 	protected final void walk(int direction) {
         energy = energy-walk_energy_cost;
 	    moveHelper(1,direction);
-
 	}
+    /**
+     * Getter function for the hasMoved variable.
+     * @return hasMoved
+     */
 	private boolean getHasMoved()
     {
         return false;
     }
+    /**
+     * Determines the new energy/x and y coordinates when a critter signals it is trying to run.
+     * @param direction
+     * @return nothing
+     */
 	protected final void run(int direction) {
         moveHelper(2,direction);
         energy = energy-run_energy_cost;
 	}
-	
+    /**
+     * Handles when a critter tries to reproduce. Handles if not enough energy is present.
+     * Will update the parent and the offsprings' energy accordingly.
+     * Adds the offspring to the babies ArrayList to be dealt with at the next WorldTimeStep.
+     * @param offspring
+     * @param direction
+     * @return nothing
+     */
 	protected final void reproduce(Critter offspring, int direction) {
 	    //cannot reproduce
         if(getEnergy() < min_reproduce_energy) {
@@ -338,6 +364,12 @@ public abstract class Critter {
 	    population.clear();
 		babies.clear();
 	}
+    /**
+     * Determines if another critter is occupying the same spot.
+     * @param x_coord
+     * @param y_coord
+     * @return nothing
+     */
 	private static boolean alreadyOccupied(int x_coord, int y_coord)
     {
         int same = 0;
@@ -355,10 +387,19 @@ public abstract class Critter {
         else
             return false;
     }
-	
+
+    /**
+     * Performs a timestep which according to the critter type moves/remains to a specific postion through walking or running
+     * Accounts for the case of having two critters in the same space after doing a timestep and resolving any issues it may cause
+     * spawns new algae
+     * converts babies into critters at the end of the worldTimeStep
+     */
 	public static void worldTimeStep() {
 	    int tempXCoord;
 	    int tempYCoord;
+	    int iRoll =0;
+	    int jRoll =0;
+	    boolean flag = false;
 		//makes each critter do a timestep
 	    for(int i = 0;i<population.size();i++)
         {
@@ -368,7 +409,7 @@ public abstract class Critter {
         ListIterator<Critter> iter= population.listIterator();
        while(iter.hasNext())
        {
-           if(iter.next().energy < 0)
+           if(iter.next().energy <= 0)
            {
                iter.remove();
            }
@@ -378,61 +419,163 @@ public abstract class Critter {
         {
             for(int j =i+1;j<population.size();j++)
             {
+                //there are only encounters when both critters match
                 if(population.get(i).x_coord == population.get(j).x_coord && population.get(i).y_coord == population.get(j).y_coord )
                 {
+                    tempXCoord = population.get(i).x_coord;
+                    tempYCoord = population.get(i).y_coord;
                     //checking to see if i will fight j
                     if(population.get(i).fight(population.get(j).toString()))
                     {
+                        flag = true;
+                        tempXCoord = population.get(j).x_coord;
+                        tempYCoord = population.get(j).y_coord;
                         //i wants to fight j but is waiting on j to respond
+                        //works if both critters want to fight
                         if(population.get(j).fight(population.get(i).toString()))
                         {
                             //both critters want to fight
-                            int iRoll = Critter.getRandomInt(population.get(i).energy);
-                            int jRoll = Critter.getRandomInt(population.get(j).energy);
+                            iRoll = Critter.getRandomInt(population.get(i).energy);
+                            jRoll = Critter.getRandomInt(population.get(j).energy);
 
                             if(iRoll > jRoll)
                             {
                                 population.get(i).energy += population.get(j).energy/2;
                                 population.remove(j);
+                                j--;
                             }
-                            else {
+                            else
+                            {
                                 population.get(j).energy += population.get(i).energy/2;
                                 population.remove(i);
+                                i--;
+                                j--;
                             }
                         }
+                        //i wants to fight, but j is attempting to run/walk away
                         else
                         {
-
-                            tempXCoord = population.get(j).x_coord;
-                            tempYCoord = population.get(j).y_coord;
-                            population.get(j).run(getRandomInt(8));
+                            //if j has run and has a conflict with another space, then it must revert back to its original position
                             if(alreadyOccupied(population.get(j).x_coord,population.get(j).y_coord))
                             {
                                 population.get(j).x_coord = tempXCoord;
                                 population.get(j).y_coord = tempYCoord;
                             }
+                            //if in this process of running it dies, then j must to removed from the list
                             if(population.get(j).energy <= 0)
                             {
                                 population.remove(population.get(j));
+                                j--;
                             }
+                            //if i and j both are still in the same position(i.e. j ran to an occupied space)
+                            else if (population.get(i).x_coord == population.get(j).x_coord && population.get(i).y_coord == population.get(j).y_coord ) {
+                                iRoll = Critter.getRandomInt(population.get(i).energy);
+                                jRoll = 0;
+
+                                //kills j as it has not moved and does not want to fight and it off chance iRoll= jRoll, j still dies
+                                if(iRoll >= jRoll)
+                                {
+                                    population.get(i).energy += population.get(j).energy/2;
+                                    population.remove(j);
+                                    j--;
+                                }
+                            }
+                            //if both are not in the same space, then it is good to go
+
                         }
                     }
-                    if(population.get(j).fight(population.get(i).toString()))
+                    //making sure that the place that i moved to is not already occupied
+                    if(alreadyOccupied(population.get(i).x_coord,population.get(i).y_coord))
                     {
-                        if(population.get(i).getHasMoved())
+                        population.get(i).x_coord = tempXCoord;
+                        population.get(i).y_coord = tempYCoord;
+                    }
+
+                    tempXCoord = population.get(j).x_coord;
+                    tempYCoord = population.get(j).y_coord;
+                    //if i doesn't want to fight
+                    if(population.get(j).fight(population.get(i).toString()) && !flag)
+                    {
+                        //after running, if the energy is dropped below 0, then i must die.
+                        if(population.get(i).energy <= 0)
+                        {
+                            population.remove(i);
+                            i--;
+                            j--;
+                        }
+                        //if both are still in the same positon, then a fight must occur
+                        else if (population.get(i).x_coord == population.get(j).x_coord && population.get(i).y_coord == population.get(j).y_coord ) {
+                            iRoll = Critter.getRandomInt(population.get(i).energy);
+                            jRoll = 0;
+
+                            //kills j as it has not moved and does not want to fight and it off chance iRoll= jRoll, j still dies
+                            if(iRoll >= jRoll)
+                            {
+                                population.get(i).energy = population.get(i).energy+ population.get(j).energy/2;
+                                population.remove(j);
+                                j--;
+                            }
+                        }
+
+                        //if both are not in the same position, then no fights occur and game proceeds normally
+                    }
+                    //both don't want to fight
+                    else
+                    {
+                        //resetting the position of the j if the position it moved to is already occupied
+                        if(alreadyOccupied(population.get(j).x_coord,population.get(j).y_coord))
+                        {
+                            population.get(j).x_coord = tempXCoord;
+                            population.get(j).y_coord = tempYCoord;
+                        }
+                        //if energy after both fight steps has dropped below 0, they must die
+                        if(population.get(i).energy <= 0)
+                        {
+                            population.remove(i);
+                            i--;
+                            j--;
+                        }
+                        if(population.get(j).energy <= 0)
+                        {
+                            population.remove(j);
+                            j--;
+                        }
+                        //if they are both alive, then one must die
+                        iRoll = Critter.getRandomInt(population.get(i).energy);
+                        jRoll = Critter.getRandomInt(population.get(j).energy);
+
+                        if(iRoll >= jRoll)
+                        {
+                            population.get(i).energy += population.get(j).energy/2;
+                            population.remove(j);
+                            j--;
+                        }
+                        else
                         {
                             population.get(j).energy += population.get(i).energy/2;
                             population.remove(i);
-                        }
-                        else {
-                            population.get(i).run(getRandomInt(8));
+                            i--;
+                            j--;
                         }
                     }
-
                 }
             }
         }
-
+        //subtract rest energy cost
+        for(int i = 0;i<population.size();i++)
+        {
+            population.get(i).energy = population.get(i).energy - rest_energy_cost;
+        }
+        //clears any dead critters left on the map
+        ListIterator<Critter> newPop= population.listIterator();
+        while(newPop.hasNext())
+        {
+            if(newPop.next().energy <= 0)
+            {
+                newPop.remove();
+            }
+        }
+        //spawns new algae
         for (int i = 0; i < refresh_algae_count; i++) {
             TestCritter addAlg = new Algae();
             addAlg.setEnergy(start_energy);
@@ -440,7 +583,7 @@ public abstract class Critter {
             addAlg.setY_coord(getRandomInt(world_height));
             population.add(addAlg);
         }
-
+        //converts the babies into critters
         if(babies.size()!=0) {
             for(int i = 0; i<babies.size();i++) {
                 population.add(babies.get(i));
@@ -449,6 +592,14 @@ public abstract class Critter {
         }
     }
 
+    /**
+     * Used when printing out the grid for view of the Critters.
+     * If there is a critter occupying a point on the grid it will return it's String representation to be printed.
+     * If not, will return return a blank space.
+     * @param x
+     * @param y
+     * @return String representation of a critter if spot is occupied, else a space
+     */
 	public static String checkOccupancy(int x, int y){
 	    for(int i = 0; i < population.size(); i++){
 	        if(population.get(i).x_coord == x && population.get(i).y_coord == y){
@@ -459,8 +610,10 @@ public abstract class Critter {
     }
 
 
-
-
+    /**
+     * Prints to the console the visual representation of the critters' world.
+     * Calls checkOccupancy to account for the points that critters occupy.
+     */
 	public static void displayWorld() {
 	    System.out.print("+");
 	    for(int i = 0; i<world_width;i++){

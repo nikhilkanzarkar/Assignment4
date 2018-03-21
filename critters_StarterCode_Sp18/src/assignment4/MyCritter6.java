@@ -1,21 +1,39 @@
 package assignment4;
 
-import assignment4.Critter.TestCritter;
+public class MyCritter6 extends Critter.TestCritter {
+	private boolean hasMoved= false;
 
-public class MyCritter6 extends TestCritter {
+	/**
+	 * Constructor for the MyCritter1 critter. Sets the hasMoved variable to false.
+	 */
+	public MyCritter6()
+	{
+		hasMoved = false;
+	}
 	
 	@Override
+	/**
+	 *
+	 */
 	public void doTimeStep() {
-
+		run(getRandomInt(8));
 	}
 
 	@Override
+	/**
+	 *
+	 */
 	public boolean fight(String opponent) {
-		run(getRandomInt(8));
+		if(!hasMoved) {
+			run(getRandomInt(8));
+		}
 		return false;
 	}
 
 	@Override
+	/**
+	 * The one character representation of this critter which is used to show where it is on the grid map when printed.
+	 */
 	public String toString () {
 		return "5";
 	}
