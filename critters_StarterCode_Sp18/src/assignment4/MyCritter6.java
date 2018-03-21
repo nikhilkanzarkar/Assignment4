@@ -1,6 +1,6 @@
 package assignment4;
 
-public class MyCritter6 extends Critter.TestCritter {
+public class MyCritter6 extends Critter {
 	private boolean hasMoved= false;
 
 	/**

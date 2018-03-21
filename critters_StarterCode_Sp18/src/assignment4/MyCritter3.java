@@ -13,7 +13,7 @@ public class MyCritter3 extends Critter{
     /**
      * A very basic timestep based on 1 or 0.
      * If 0, then it will run in an random direction
-     * If 1, then it will not move
+     * If 1, then it will not move at all
      */
     public void doTimeStep()
     {
@@ -21,6 +21,7 @@ public class MyCritter3 extends Critter{
             run(getRandomInt(8));
             hasMoved = true;
         }
+
         else {
             hasMoved = false;
         }

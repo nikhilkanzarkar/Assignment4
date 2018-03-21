@@ -23,8 +23,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1520">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -33,7 +33,7 @@
       <file leaf-file-name="A4SampleTest2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_sample/assignment4/A4SampleTest2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
+            <state relative-caret-position="2261">
               <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -42,18 +42,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyCritter3.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyCritter3.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-245">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
               <folding>
                 <element signature="e#229#230#0" expanded="true" />
                 <element signature="e#261#262#0" expanded="true" />
-                <element signature="e#826#827#0" expanded="true" />
-                <element signature="e#857#858#0" expanded="true" />
-                <element signature="e#1476#1477#0" expanded="true" />
-                <element signature="e#1502#1503#0" expanded="true" />
+                <element signature="e#834#835#0" expanded="true" />
+                <element signature="e#865#866#0" expanded="true" />
+                <element signature="e#1484#1485#0" expanded="true" />
+                <element signature="e#1510#1511#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,11 +62,11 @@
       <file leaf-file-name="MyCritter1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="51" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+            <state relative-caret-position="153">
+              <caret line="10" column="83" lean-forward="true" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
               <folding>
-                <element signature="e#2348#2349#0" expanded="true" />
-                <element signature="e#2374#2375#0" expanded="true" />
+                <element signature="e#2336#2337#0" expanded="true" />
+                <element signature="e#2362#2363#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,15 +75,15 @@
       <file leaf-file-name="MyCritter6.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter6.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="2" column="51" lean-forward="false" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+            <state relative-caret-position="34">
+              <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
               <folding>
-                <element signature="e#224#225#0" expanded="true" />
-                <element signature="e#247#248#0" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#329#330#0" expanded="true" />
-                <element signature="e#630#631#0" expanded="true" />
-                <element signature="e#647#648#0" expanded="true" />
+                <element signature="e#212#213#0" expanded="true" />
+                <element signature="e#235#236#0" expanded="true" />
+                <element signature="e#290#291#0" expanded="true" />
+                <element signature="e#317#318#0" expanded="true" />
+                <element signature="e#618#619#0" expanded="true" />
+                <element signature="e#635#636#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,18 +102,14 @@
       <file leaf-file-name="Critter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="592" column="0" lean-forward="false" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#877#886#0" expanded="true" />
-                <element signature="e#952#961#0" expanded="true" />
                 <element signature="method#moveHelper#0;class#Critter#0" expanded="false" />
-                <element signature="e#5145#5146#0" expanded="true" />
-                <element signature="e#5173#5174#0" expanded="true" />
+                <element signature="e#5020#5021#0" expanded="true" />
+                <element signature="e#5048#5049#0" expanded="true" />
                 <element signature="method#getInstances#0;class#Critter#0" expanded="false" />
-                <element signature="e#8354#8363#0" expanded="true" />
-                <element signature="e#9139#9156#0" expanded="true" />
                 <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
                 <element signature="method#alreadyOccupied#0;class#Critter#0" expanded="false" />
                 <element signature="method#checkOccupancy#0;class#Critter#0" expanded="false" />
@@ -122,14 +118,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyCritter7.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyCritter7.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-221">
-              <caret line="5" column="51" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+            <state relative-caret-position="85">
+              <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
               <folding>
-                <element signature="e#1644#1645#0" expanded="true" />
-                <element signature="e#1661#1662#0" expanded="true" />
+                <element signature="e#1632#1633#0" expanded="true" />
+                <element signature="e#1649#1650#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,13 +153,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/assignment4/Critter.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Main.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/MyCritter3.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/MyCritter6.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/MyCritter7.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/MyCritter1.java" />
         <option value="$PROJECT_DIR$/test_sample/assignment4/A4SampleTest2.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/MyCritter1.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/MyCritter7.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/Critter.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/MyCritter6.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/MyCritter3.java" />
       </list>
     </option>
   </component>
@@ -179,7 +175,7 @@
     <option name="height" value="1087" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -192,34 +188,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="critters_StarterCode_Sp18" type="b2602c69:ProjectViewProjectNode" />
-              <item name="critters_StarterCode_Sp18" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="critters_StarterCode_Sp18" type="b2602c69:ProjectViewProjectNode" />
-              <item name="critters_StarterCode_Sp18" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="critters_StarterCode_Sp18" type="b2602c69:ProjectViewProjectNode" />
-              <item name="critters_StarterCode_Sp18" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assignment4" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -391,6 +360,7 @@
       <workItem from="1521410522222" duration="8140000" />
       <workItem from="1521573910119" duration="9028000" />
       <workItem from="1521600887084" duration="11342000" />
+      <workItem from="1521613188960" duration="288000" />
     </task>
     <servers />
   </component>
@@ -406,14 +376,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28510000" />
+    <option name="totallyTimeSpent" value="28798000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1273" y="0" width="1294" height="1087" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295688" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -436,6 +406,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295688" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942098" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -481,12 +452,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/assignment4/Critter.java</url>
-          <line>437</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test_sample/assignment4/A4SampleTest2.java</url>
           <line>128</line>
           <properties />
@@ -498,6 +463,101 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_sample/assignment4/A4SampleTest2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2261">
+          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="51" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+          <folding>
+            <element signature="e#2336#2337#0" expanded="true" />
+            <element signature="e#2362#2363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#865#866#0" expanded="true" />
+            <element signature="e#1484#1485#0" expanded="true" />
+            <element signature="e#1510#1511#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="51" lean-forward="false" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+          <folding>
+            <element signature="e#212#213#0" expanded="true" />
+            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7531">
+          <caret line="592" column="0" lean-forward="false" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#moveHelper#0;class#Critter#0" expanded="false" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
+            <element signature="method#getInstances#0;class#Critter#0" expanded="false" />
+            <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
+            <element signature="method#alreadyOccupied#0;class#Critter#0" expanded="false" />
+            <element signature="method#checkOccupancy#0;class#Critter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="51" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+          <folding>
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -529,10 +589,10 @@
           <folding>
             <element signature="e#229#230#0" expanded="true" />
             <element signature="e#261#262#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#865#866#0" expanded="true" />
+            <element signature="e#1484#1485#0" expanded="true" />
+            <element signature="e#1510#1511#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -542,8 +602,8 @@
         <state relative-caret-position="357">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="e#2348#2349#0" expanded="true" />
-            <element signature="e#2374#2375#0" expanded="true" />
+            <element signature="e#2336#2337#0" expanded="true" />
+            <element signature="e#2362#2363#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -553,12 +613,12 @@
         <state relative-caret-position="374">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#247#248#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#212#213#0" expanded="true" />
+            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -568,8 +628,8 @@
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
-            <element signature="e#1644#1645#0" expanded="true" />
-            <element signature="e#1661#1662#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -598,14 +658,10 @@
           <caret line="166" column="5" lean-forward="true" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#877#886#0" expanded="true" />
-            <element signature="e#952#961#0" expanded="true" />
             <element signature="method#moveHelper#0;class#Critter#0" expanded="false" />
-            <element signature="e#5145#5146#0" expanded="true" />
-            <element signature="e#5173#5174#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
             <element signature="method#getInstances#0;class#Critter#0" expanded="false" />
-            <element signature="e#8354#8363#0" expanded="true" />
-            <element signature="e#9139#9156#0" expanded="true" />
             <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#alreadyOccupied#0;class#Critter#0" expanded="false" />
             <element signature="method#checkOccupancy#0;class#Critter#0" expanded="false" />
@@ -642,8 +698,8 @@
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
-            <element signature="e#2348#2349#0" expanded="true" />
-            <element signature="e#2374#2375#0" expanded="true" />
+            <element signature="e#2336#2337#0" expanded="true" />
+            <element signature="e#2362#2363#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -653,12 +709,12 @@
         <state relative-caret-position="119">
           <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
           <folding>
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#247#248#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#212#213#0" expanded="true" />
+            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -668,8 +724,8 @@
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
-            <element signature="e#1644#1645#0" expanded="true" />
-            <element signature="e#1661#1662#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -698,14 +754,10 @@
           <caret line="101" column="23" lean-forward="false" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#877#886#0" expanded="true" />
-            <element signature="e#952#961#0" expanded="true" />
             <element signature="method#moveHelper#0;class#Critter#0" expanded="false" />
-            <element signature="e#5145#5146#0" expanded="true" />
-            <element signature="e#5173#5174#0" expanded="true" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
             <element signature="method#getInstances#0;class#Critter#0" expanded="false" />
-            <element signature="e#8354#8363#0" expanded="true" />
-            <element signature="e#9139#9156#0" expanded="true" />
             <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#alreadyOccupied#0;class#Critter#0" expanded="false" />
             <element signature="method#checkOccupancy#0;class#Critter#0" expanded="false" />
@@ -743,9 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3056">
           <caret line="511" column="46" lean-forward="true" selection-start-line="511" selection-start-column="46" selection-end-line="511" selection-end-column="46" />
-          <folding>
-            <element signature="method#moveHelper#0;class#Critter#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -753,7 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -761,7 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="16" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,7 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -785,70 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="42" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1520">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="51" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-          <folding>
-            <element signature="e#2348#2349#0" expanded="true" />
-            <element signature="e#2374#2375#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-245">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#261#262#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="592" column="0" lean-forward="false" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#877#886#0" expanded="true" />
-            <element signature="e#952#961#0" expanded="true" />
-            <element signature="method#moveHelper#0;class#Critter#0" expanded="false" />
-            <element signature="e#5145#5146#0" expanded="true" />
-            <element signature="e#5173#5174#0" expanded="true" />
-            <element signature="method#getInstances#0;class#Critter#0" expanded="false" />
-            <element signature="e#8354#8363#0" expanded="true" />
-            <element signature="e#9139#9156#0" expanded="true" />
-            <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
-            <element signature="method#alreadyOccupied#0;class#Critter#0" expanded="false" />
-            <element signature="method#checkOccupancy#0;class#Critter#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -856,7 +837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,13 +844,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_sample/assignment4/A4SampleTest2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
+        <state relative-caret-position="2261">
           <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -878,28 +857,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter6.java">
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="2" column="51" lean-forward="false" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
           <folding>
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#247#248#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#moveHelper#0;class#Critter#0" expanded="false" />
+            <element signature="e#5020#5021#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
+            <element signature="method#getInstances#0;class#Critter#0" expanded="false" />
+            <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
+            <element signature="method#alreadyOccupied#0;class#Critter#0" expanded="false" />
+            <element signature="method#checkOccupancy#0;class#Critter#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter7.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="5" column="51" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+        <state relative-caret-position="85">
+          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
           <folding>
-            <element signature="e#1644#1645#0" expanded="true" />
-            <element signature="e#1661#1662#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <folding>
+            <element signature="e#212#213#0" expanded="true" />
+            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="83" lean-forward="true" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
+          <folding>
+            <element signature="e#2336#2337#0" expanded="true" />
+            <element signature="e#2362#2363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#865#866#0" expanded="true" />
+            <element signature="e#1484#1485#0" expanded="true" />
+            <element signature="e#1510#1511#0" expanded="true" />
           </folding>
         </state>
       </provider>
