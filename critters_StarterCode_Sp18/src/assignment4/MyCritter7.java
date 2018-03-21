@@ -3,7 +3,7 @@ package assignment4;
 import static assignment4.Params.*;
 
 
-public class MyCritter7 extends Critter {
+public class MyCritter7 extends Critter.TestCritter {
 
 	private boolean hasMoved;
 	/**
