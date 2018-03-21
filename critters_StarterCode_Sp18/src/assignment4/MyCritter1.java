@@ -3,7 +3,7 @@ package assignment4;
 import java.util.*;
 import static assignment4.Params.*;
 
-public class MyCritter1 extends Critter.TestCritter {
+public class MyCritter1 extends Critter {
 
     private boolean hasMoved;
 
