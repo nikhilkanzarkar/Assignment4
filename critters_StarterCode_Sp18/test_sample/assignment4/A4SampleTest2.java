@@ -114,10 +114,10 @@ public class A4SampleTest2 {
 		int x = 0;
 		int y = 0;
 		int num = 2;
-		Critter.makeCritter("assignment4.MyCritter6");
-		MyCritter6 runner = (MyCritter6) Critter.getInstances("assignment4.MyCritter6").get(0);
-		Critter.makeCritter("assignment4.MyCritter7");
-		MyCritter7 fighter = (MyCritter7) Critter.getInstances("assignment4.MyCritter7").get(0);
+		Critter.makeCritter("MyCritter6");
+		MyCritter6 runner = (MyCritter6) Critter.getInstances("MyCritter6").get(0);
+		Critter.makeCritter("MyCritter7");
+		MyCritter7 fighter = (MyCritter7) Critter.getInstances("MyCritter7").get(0);
 		runner.setX_coord(x);
 		runner.setY_coord(y);
 		fighter.setX_coord(x);

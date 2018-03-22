@@ -10,6 +10,7 @@ package assignment4;
  * Spring 2018
  */
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,7 @@ public class Main {
         while(!endGame) {
 
             //prompts the user for an instruction and then splits it up if it is more than one word
-            System.out.println("critters>");
+            System.out.print("critters>");
             String input = kb.nextLine();
             String[] multInp = input.split(" ");
 
@@ -100,19 +101,37 @@ public class Main {
                 else Critter.worldTimeStep();								//will only step once if no number was inputted
             }
             else if(multInp[0].equals("seed")) {
-                Critter.setSeed(Long.parseLong(multInp[1]));
+                try {
+                    Critter.setSeed(Long.parseLong(multInp[1]));
+                }
+                catch(ArrayIndexOutOfBoundsException e) {
+                    System.out.println("error processing: " + input);
+                }
             }
             else if(multInp[0].equals("make")) {
-                String className = multInp[1];
+                String className = "";
+                try {
+                    className = multInp[1];
+                }
+                catch(ArrayIndexOutOfBoundsException e) {
+
+                }
                 if(multInp.length>2) {
-                    int times = Integer.parseInt(multInp[2]);				//converts the input into how many critters to create of that type
-                    for(int i = 0; i < times; i++) {
-                        try {
-                            Critter.makeCritter(className);
+                    try {
+                        int times = Integer.parseInt(multInp[2]);				//converts the input into how many critters to create of that type
+
+                        for(int i = 0; i < times; i++) {
+                            try {
+                                Critter.makeCritter(className);
+                            }
+                            catch(InvalidCritterException e) {
+                                System.out.println("error processing: " + input);
+                            }
                         }
-                        catch(InvalidCritterException e) {
-                            System.out.println("error processing: " + input);
-                        }
+                    }
+                    catch(NumberFormatException e) {
+                        System.out.println("error processing: " + input);
+                        break;
                     }
                 }
                 else {														//will only make one critter if no number was inputted
@@ -128,14 +147,57 @@ public class Main {
             }
             else if(multInp[0].equals("stats")) {
                 List<Critter> instance = new ArrayList<Critter>();
+                boolean empty = false;
                 try {
                     instance = Critter.getInstances(multInp[1]);
+                    java.lang.reflect.Method method = null;
+                    Class loadClass = null;
 
+                    if(instance.size() == 0) {
+                        //have to account for a subclass static runStats method in which there are no instances
+                        try {
+                            String updatedClass = "assignment4." + multInp[1];
+                            loadClass = Class.forName(updatedClass);
+
+                            method = loadClass.getMethod("runStats", List.class);
+
+                        }
+                        catch(ClassNotFoundException e) {
+                            System.out.println("error processing: " + input);
+                        }
+                        catch(SecurityException e) {
+                            System.out.println("error processing: " + input);
+                        }
+                        catch(NoSuchMethodException e) {
+                            System.out.println("error processing: " + input);
+                        }
+                        //if statement to make sure if subclass doesn't have a runStats to skip the invoke and continue
+                        try {
+                            if(method != null && (method.getDeclaringClass() != Critter.class)) {
+                                method.invoke(loadClass, instance);
+                                empty = true;
+                            }
+
+                        }
+                        catch (IllegalArgumentException e) {  }
+                        catch (IllegalAccessException e) { }
+                        catch (InvocationTargetException e) {  }
+                    }
+                    if(!empty) {
+                        Critter.runStats(instance);
+                        empty = false;
+                    }
                 }
                 catch(InvalidCritterException e) {
                     System.out.println("error processing: " + input);
                 }
-                Critter.runStats(instance);
+                catch(IndexOutOfBoundsException e) {
+                    System.out.println("error processing: " + input);
+                }
+                catch(NoClassDefFoundError e) {
+                    System.out.println("error processing: " + input);
+                }
+
             }
             else {
                 System.out.println("invalid command: " + input);				//if the input is not recognized it will prompt the user and then ask for another

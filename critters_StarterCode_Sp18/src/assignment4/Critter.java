@@ -1,5 +1,5 @@
 package assignment4;
-/* CRITTERS Critters.java
+/* CRITTERS Critter.java
  * EE422C Project 4 submission by
  * Nikhil Kanzarkar
  * nk8357
@@ -173,8 +173,7 @@ public abstract class Critter {
      * Getter function for the hasMoved variable.
      * @return hasMoved
      */
-	private boolean getHasMoved()
-    {
+	private boolean getHasMoved() {
         return false;
     }
     /**
@@ -223,9 +222,10 @@ public abstract class Critter {
 	 * @param critter_class_name
 	 * @throws InvalidCritterException
 	 */
-	public static void makeCritter(String critter_class_name) throws InvalidCritterException {
-		try{
-		    Class loadClass = Class.forName(critter_class_name);
+    public static void makeCritter(String critter_class_name) throws InvalidCritterException {
+        try{
+            String updatedClass = "assignment4." + critter_class_name;
+            Class loadClass = Class.forName(updatedClass);
             Constructor makeCrit = loadClass.getConstructor();
             Critter newCrit = (Critter)makeCrit.newInstance();
             newCrit.energy = start_energy;
@@ -234,28 +234,22 @@ public abstract class Critter {
             population.add(newCrit);
 
         }
-        catch(ClassNotFoundException e)
-        {
-		    throw new InvalidCritterException(critter_class_name);
-        }
-        catch (IllegalAccessException e)
-        {
+        catch(ClassNotFoundException e) {
             throw new InvalidCritterException(critter_class_name);
         }
-        catch (InstantiationException e)
-        {
+        catch (IllegalAccessException e) {
             throw new InvalidCritterException(critter_class_name);
         }
-        catch (NoSuchMethodException e)
-        {
+        catch (InstantiationException e) {
             throw new InvalidCritterException(critter_class_name);
         }
-        catch (InvocationTargetException e)
-        {
+        catch (NoSuchMethodException e) {
             throw new InvalidCritterException(critter_class_name);
         }
-	}
-	
+        catch (InvocationTargetException e) {
+            throw new InvalidCritterException(critter_class_name);
+        }
+    }
 	/**
 	 * Gets a list of critters of a specific type.
 	 * @param critter_class_name What kind of Critter is to be listed.  Unqualified class name.
@@ -265,7 +259,8 @@ public abstract class Critter {
     public static List<Critter> getInstances(String critter_class_name) throws InvalidCritterException {
         List<Critter> result = new java.util.ArrayList<Critter>();
         try {
-            Class loadClass = Class.forName(critter_class_name);
+            String updatedClass = "assignment4." + critter_class_name;
+            Class loadClass = Class.forName(updatedClass);
             for (int i = 0; i < population.size(); i++) {
                 if (population.get(i).getClass() == loadClass ) {
                     result.add(population.get(i));
@@ -273,36 +268,62 @@ public abstract class Critter {
             }
             return result;
         }
-        catch(ClassNotFoundException e)
-        {
+        catch(ClassNotFoundException e) {
             throw new InvalidCritterException(critter_class_name);
         }
     }
-	
 	/**
 	 * Prints out how many Critters of each type there are on the board.
 	 * @param critters List of Critters.
 	 */
-	public static void runStats(List<Critter> critters) {
-		System.out.print("" + critters.size() + " critters as follows -- ");
-		java.util.Map<String, Integer> critter_count = new java.util.HashMap<String, Integer>();
-		for (Critter crit : critters) {
-			String crit_string = crit.toString();
-			Integer old_count = critter_count.get(crit_string);
-			if (old_count == null) {
-				critter_count.put(crit_string,  1);
-			} else {
-				critter_count.put(crit_string, old_count.intValue() + 1);
-			}
-		}
-		String prefix = "";
-		for (String s : critter_count.keySet()) {
-			System.out.print(prefix + s + ":" + critter_count.get(s));
-			prefix = ", ";
-		}
-		System.out.println();		
-	}
-	
+    public static void runStats(List<Critter> critters) {
+        //use java class Method to access static sublclass runStats function
+        java.lang.reflect.Method method = null;
+        try {
+            if(!critters.isEmpty()) {
+                Class temp = critters.get(0).getClass();
+                method = temp.getMethod("runStats", List.class);
+            }
+        }
+        catch(SecurityException e) {
+
+        }
+        catch(NoSuchMethodException e) {
+
+        }
+        //if statement to make sure if subclass doesn't have a runStats to skip the invoke and continue
+        try {
+            if(method != null && (method.getDeclaringClass() != Critter.class)) {
+
+                method.invoke(critters.get(0).getClass(), critters);
+                return;
+            }
+
+        }
+        catch (IllegalArgumentException e) {  }
+        catch (IllegalAccessException e) { }
+        catch (InvocationTargetException e) {  }
+
+        System.out.print("" + critters.size() + " critters as follows -- ");
+
+        java.util.Map<String, Integer> critter_count = new java.util.HashMap<String, Integer>();
+
+        for (Critter crit : critters) {
+            String crit_string = crit.toString();
+            Integer old_count = critter_count.get(crit_string);
+            if (old_count == null) {
+                critter_count.put(crit_string,  1);
+            } else {
+                critter_count.put(crit_string, old_count.intValue() + 1);
+            }
+        }
+        String prefix = "";
+        for (String s : critter_count.keySet()) {
+            System.out.print(prefix + s + ":" + critter_count.get(s));
+            prefix = ", ";
+        }
+        System.out.println();
+    }
 	/* the TestCritter class allows some critters to "cheat". If you want to 
 	 * create tests of your Critter model, you can create subclasses of this class
 	 * and then use the setter functions contained here. 
@@ -371,19 +392,17 @@ public abstract class Critter {
 	private static boolean alreadyOccupied(int x_coord, int y_coord)
     {
         int same = 0;
-        for(int i = 0;i<population.size();i++)
-        {
-            if(population.get(i).x_coord == x_coord && population.get(i).y_coord == y_coord)
-            {
+        for(int i = 0;i<population.size();i++) {
+            if(population.get(i).x_coord == x_coord && population.get(i).y_coord == y_coord) {
                 same++;
             }
         }
-        if(same > 1)
-        {
+        if(same > 1) {
             return true;
         }
-        else
+        else {
             return false;
+        }
     }
 
     /**
@@ -397,71 +416,58 @@ public abstract class Critter {
 	    int tempYCoord;
 	    int iRoll =0;
 	    int jRoll =0;
-	    boolean flag = false;
+
 		//makes each critter do a timestep
-	    for(int i = 0;i<population.size();i++)
-        {
+	    for(int i = 0;i<population.size();i++) {
             population.get(i).doTimeStep();
         }
         //deletes any critter that has moved but has no/negative energy now.
         ListIterator<Critter> iter= population.listIterator();
-       while(iter.hasNext())
-       {
-           if(iter.next().energy <= 0)
-           {
+       while(iter.hasNext()) {
+           if(iter.next().energy <= 0) {
                iter.remove();
            }
        }
         //encounters checking
-        for(int i =0;i<population.size();i++)
-        {
-            for(int j =i+1;j<population.size();j++)
-            {
+        for(int i =0;i<population.size();i++) {
+            for(int j =i+1;j<population.size();j++) {
                 //there are only encounters when both critters match
-                if(population.get(i).x_coord == population.get(j).x_coord && population.get(i).y_coord == population.get(j).y_coord )
-                {
+                if(population.get(i).x_coord == population.get(j).x_coord && population.get(i).y_coord == population.get(j).y_coord ) {
+
                     tempXCoord = population.get(i).x_coord;
                     tempYCoord = population.get(i).y_coord;
                     //checking to see if i will fight j
-                    if(population.get(i).fight(population.get(j).toString()))
-                    {
-                        flag = true;
+                    if(population.get(i).fight(population.get(j).toString())) {
                         tempXCoord = population.get(j).x_coord;
                         tempYCoord = population.get(j).y_coord;
                         //i wants to fight j but is waiting on j to respond
                         //works if both critters want to fight
-                        if(population.get(j).fight(population.get(i).toString()))
-                        {
+                        if(population.get(j).fight(population.get(i).toString())) {
                             //both critters want to fight
                             iRoll = Critter.getRandomInt(population.get(i).energy);
                             jRoll = Critter.getRandomInt(population.get(j).energy);
 
-                            if(iRoll > jRoll)
-                            {
+                            if(iRoll > jRoll) {
                                 population.get(i).energy += population.get(j).energy/2;
                                 population.remove(j);
                                 j--;
                             }
-                            else
-                            {
+                            else {
                                 population.get(j).energy += population.get(i).energy/2;
                                 population.remove(i);
                                 i--;
-                                j--;
+                                break;
                             }
                         }
                         //i wants to fight, but j is attempting to run/walk away
-                        else
-                        {
+                        else {
                             //if j has run and has a conflict with another space, then it must revert back to its original position
-                            if(alreadyOccupied(population.get(j).x_coord,population.get(j).y_coord))
-                            {
+                            if(alreadyOccupied(population.get(j).x_coord,population.get(j).y_coord)) {
                                 population.get(j).x_coord = tempXCoord;
                                 population.get(j).y_coord = tempYCoord;
                             }
                             //if in this process of running it dies, then j must to removed from the list
-                            if(population.get(j).energy <= 0)
-                            {
+                            if(population.get(j).energy <= 0) {
                                 population.remove(population.get(j));
                                 j--;
                             }
@@ -471,105 +477,91 @@ public abstract class Critter {
                                 jRoll = 0;
 
                                 //kills j as it has not moved and does not want to fight and it off chance iRoll= jRoll, j still dies
-                                if(iRoll >= jRoll)
-                                {
+                                if(iRoll >= jRoll) {
                                     population.get(i).energy += population.get(j).energy/2;
                                     population.remove(j);
                                     j--;
                                 }
                             }
                             //if both are not in the same space, then it is good to go
-
                         }
                     }
-                    //making sure that the place that i moved to is not already occupied
-                    if(alreadyOccupied(population.get(i).x_coord,population.get(i).y_coord))
-                    {
-                        population.get(i).x_coord = tempXCoord;
-                        population.get(i).y_coord = tempYCoord;
-                    }
-
-                    tempXCoord = population.get(j).x_coord;
-                    tempYCoord = population.get(j).y_coord;
-                    //if i doesn't want to fight
-                    if(population.get(j).fight(population.get(i).toString()) && !flag)
-                    {
-                        //after running, if the energy is dropped below 0, then i must die.
-                        if(population.get(i).energy <= 0)
-                        {
+                    else {
+                        //making sure that the place that i moved to is not already occupied
+                        if(alreadyOccupied(population.get(i).x_coord,population.get(i).y_coord)) {
+                            population.get(i).x_coord = tempXCoord;
+                            population.get(i).y_coord = tempYCoord;
+                        }
+                        tempXCoord = population.get(j).x_coord;
+                        tempYCoord = population.get(j).y_coord;
+                        if(population.get(i).energy <= 0 ) {
                             population.remove(i);
                             i--;
-                            j--;
+                            break;
                         }
-                        //if both are still in the same positon, then a fight must occur
-                        else if (population.get(i).x_coord == population.get(j).x_coord && population.get(i).y_coord == population.get(j).y_coord ) {
-                            iRoll = Critter.getRandomInt(population.get(i).energy);
-                            jRoll = 0;
+                        //if i doesn't want to fight
+                        else if(population.get(j).fight(population.get(i).toString())) {
+                            //after running, if the energy is dropped below 0, then i must die.
+                            if (population.get(i).energy <= 0) {
+                                population.remove(i);
+                                i--;
+                                break;
+                            }
+                            //if both are still in the same positon, then a fight must occur
+                            else if (population.get(i).x_coord == population.get(j).x_coord && population.get(i).y_coord == population.get(j).y_coord) {
+                                iRoll = Critter.getRandomInt(population.get(i).energy);
+                                jRoll = 0;
 
-                            //kills j as it has not moved and does not want to fight and it off chance iRoll= jRoll, j still dies
-                            if(iRoll >= jRoll)
-                            {
-                                population.get(i).energy = population.get(i).energy+ population.get(j).energy/2;
+                                //kills j as it has not moved and does not want to fight and it off chance iRoll= jRoll, j still dies
+                                if (iRoll >= jRoll) {
+                                    population.get(i).energy = population.get(i).energy + population.get(j).energy / 2;
+                                    population.remove(j);
+                                    j--;
+                                }
+                            }
+                        }
+                        //if both are not in the same position, then no fights occur and game proceeds normally
+                        else {
+                            //resetting the position of the j if the position it moved to is already occupied
+                            if(alreadyOccupied(population.get(j).x_coord,population.get(j).y_coord)) {
+                                population.get(j).x_coord = tempXCoord;
+                                population.get(j).y_coord = tempYCoord;
+                            }
+                            //if energy after both fight steps has dropped below 0, they must die
+                            if(population.get(j).energy <= 0) {
                                 population.remove(j);
                                 j--;
                             }
-                        }
 
-                        //if both are not in the same position, then no fights occur and game proceeds normally
-                    }
-                    //both don't want to fight
-                    else
-                    {
-                        //resetting the position of the j if the position it moved to is already occupied
-                        if(alreadyOccupied(population.get(j).x_coord,population.get(j).y_coord))
-                        {
-                            population.get(j).x_coord = tempXCoord;
-                            population.get(j).y_coord = tempYCoord;
-                        }
-                        //if energy after both fight steps has dropped below 0, they must die
-                        if(population.get(i).energy <= 0)
-                        {
-                            population.remove(i);
-                            i--;
-                            j--;
-                        }
-                        if(population.get(j).energy <= 0)
-                        {
-                            population.remove(j);
-                            j--;
-                        }
-                        //if they are both alive, then one must die
-                        iRoll = Critter.getRandomInt(population.get(i).energy);
-                        jRoll = Critter.getRandomInt(population.get(j).energy);
+                           else {
+                                //if they are both alive, then one must die
+                                iRoll = Critter.getRandomInt(population.get(i).energy);
+                                jRoll = Critter.getRandomInt(population.get(j).energy);
 
-                        if(iRoll >= jRoll)
-                        {
-                            population.get(i).energy += population.get(j).energy/2;
-                            population.remove(j);
-                            j--;
-                        }
-                        else
-                        {
-                            population.get(j).energy += population.get(i).energy/2;
-                            population.remove(i);
-                            i--;
-                            j--;
+                                if (iRoll >= jRoll) {
+                                    population.get(i).energy += population.get(j).energy / 2;
+                                    population.remove(j);
+                                    j--;
+                                } else {
+                                    population.get(j).energy += population.get(i).energy / 2;
+                                    population.remove(i);
+                                    i--;
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
             }
         }
         //subtract rest energy cost
-        for(int i = 0;i<population.size();i++)
-        {
+        for(int i = 0;i<population.size();i++) {
             population.get(i).energy = population.get(i).energy - rest_energy_cost;
         }
         //clears any dead critters left on the map
         ListIterator<Critter> newPop= population.listIterator();
-        while(newPop.hasNext())
-        {
-            if(newPop.next().energy <= 0)
-            {
+        while(newPop.hasNext()) {
+            if(newPop.next().energy <= 0) {
                 newPop.remove();
             }
         }
